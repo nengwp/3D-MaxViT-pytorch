@@ -1,11 +1,8 @@
 from functools import partial
-
 import torch
 from torch import nn, einsum
-
 from einops import rearrange, repeat
 from einops.layers.torch import Rearrange, Reduce
-
 # helpers
 
 def exists(val):
@@ -18,7 +15,6 @@ def cast_tuple(val, length = 1):
     return val if isinstance(val, tuple) else ((val,) * length)
 
 # helper classes
-
 class PreNormResidual(nn.Module):
     def __init__(self, dim, fn):
         super().__init__()
